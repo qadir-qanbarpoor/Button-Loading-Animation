@@ -1,0 +1,50 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+body {
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  background-color: #543a14;
+}
+.button {
+  border: none;
+  outline: none;
+  position: relative;
+  padding: 1rem 2rem;
+  background-color: #f0bb78;
+  color: #f9f9fb;
+  font-size: 1rem;
+  border-radius: 4rem;
+  box-shadow: 0 14px 35px #5063ce4d;
+  overflow: hidden;
+  cursor: wait;
+}
+.button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 150%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    60deg,
+    transparent,
+    transparent 0.75rem,
+    #131010 0.75rem,
+    #131010 1.5rem
+  );
+  animation: load 1s infinite linear;
+}
+.text {
+  position: relative;
+}
+@keyframes load {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-1.75rem);
+  }
+}
